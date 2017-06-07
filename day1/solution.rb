@@ -6,7 +6,7 @@ class Solution
   def solve
     open_file
 
-    @file.count(')') - @file.count('(')
+    @file.count('(') - @file.count(')')
   end
 
   private
