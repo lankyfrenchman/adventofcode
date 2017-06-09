@@ -1,10 +1,10 @@
 class Solution2
-  def solve
+  def part1
     @file = open_file
 
     total = 0
 
-    raw_dimensions = @file.split.map { |dimension| dimension.split('x').map(&:to_i) }
+    raw_dimensions = parse_dimensions
 
     raw_dimensions.each do |box|
       surfaces = []
@@ -26,6 +26,10 @@ class Solution2
   end
 
   private
+
+  def parse_dimensions
+    @file.split.map { |dimension| dimension.split('x').map(&:to_i) }
+  end
 
   def open_file
     @file = File.read(@file_path)

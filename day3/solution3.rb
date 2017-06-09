@@ -8,10 +8,10 @@ class Solution3 < Solver
     start = [0,0]
     locations[start.clone] = 1
 
-    positions = { "^" => [0,1], "v" => [0,-1], ">" => [1,0], "<" => [-1,0] }
+    positions = { '^' => [0,1], 'v' => [0,-1], '>' => [1,0], '<' => [-1,0] }
 
     @file.each_char do |direction|
-      next unless positions[direction] != nil
+      next unless positions[direction]
 
       start[0] += positions[direction][0]
       start[1] += positions[direction][1]
